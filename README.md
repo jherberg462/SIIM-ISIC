@@ -16,13 +16,33 @@ The purpose of this project was to create a machine learning model that can accu
 
 1. Identify tfrecord files located in the dataset cloud storage bucket.
 2. Split tfrecord files into training and validation sets
-3. Create tf.data.TFRecordDataset using tensorflow
+3. Create tf.data.TFRecordDataset using tensorflow for training, validation and test datasets
 4. Parse tf.train.Examples contained in tfrecord files
 5. Normalize image pixel values
 6. Apply data augmentation methods to effectively increase dataset size
 
 ### Create machine learning models
-1. 
+1. Create function for sets of layers that will perform convolutions (convolutional layer, Max Pooling layer, batch normalization layer, dense layer, dropout and activation layers as appropiate)
+2. Create function for sets of layers that will perform deconvolutions (Conv2DTranspose, batch normalization, dense, and dropout), and experiment with deconvolution sets of layers after convolution layers
+3. Create function that will create a model to be trained from scratch, and compile the model.
+4. Create a function that will create a model that will leverage transfer learning, and compile the model.
+5. Calculate and apply class weights and initial output bias due to the fact the dataset is unbalanced.
+6. Experiment
+
+### Training and monitoring performance
+1. Create model by calling above function with the TPU strategy.
+2. Train model using the .fit method of sequential or functional model.
+3. Create function to plot various metrics on how the model performed on training and validation data, and use this function to monitor model performance during training, and check if the model is overfitting training data.
+
+### Inference
+1. Pass test data into model to get predictions
+2. Obtain identifier of each test example in test dataset in the same order test data was input into model.
+3. Create a Pandas DataFrame of predictions and identifiers of each test example
+4. Save DataFrame as a CSV file. 
+
+### Results
+1. The best model trained from scratch scored 0.8461 AUC on unseen test data
+2. The best model that used transfer learning used the Xception model and scored 0.9058 AUC on unseen test data
 
 
 
