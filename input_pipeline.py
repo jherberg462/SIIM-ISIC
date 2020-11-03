@@ -1,4 +1,5 @@
 import tensorflow as tf
+from params import params
 
 
 def decode_image_label(tfrec):
