@@ -2,7 +2,7 @@ import tensorflow as tf
 from params import params
 
 
-def decode_image_label(tfrec):
+def decode_image_label(tfrec, params=params):
     '''
     function to decode an image and target label from tfrecord
     
@@ -28,7 +28,7 @@ def decode_image_label(tfrec):
     
 
     
-def decode_image(tfrec):
+def decode_image(tfrec, params=params):
     '''
     function to decode an image from tfrecord
     
