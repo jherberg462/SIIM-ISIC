@@ -6,7 +6,7 @@ params = {
     'epochs': 350
 }
 
-params = update_params_dict(parms)
+params = update_params_dict(params)
 
 params['img_size'] = [params['img_size'] ,params['img_size']]
 
