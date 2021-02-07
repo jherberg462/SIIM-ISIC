@@ -55,7 +55,7 @@ def update_params_dict(params_dict):
     for key in params_dict:
         try:
             new_val = get_env_variable(key)
-            params_dict[key] = new_val
+            params_dict[key] = int(new_val)
         except KeyError:
             pass
         
