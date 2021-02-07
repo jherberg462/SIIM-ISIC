@@ -10,7 +10,7 @@ def update_single_envirement_var(var_name, value):
     returns:
         None
     '''
-    os.environ[var_name] = value
+    os.environ[var_name] = str(value)
     return None
 
 def update_env_variables(dict_):
