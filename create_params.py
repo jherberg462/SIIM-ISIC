@@ -24,7 +24,7 @@ def update_env_variables(dict_):
         None
     '''
     for key in dict_:
-        update_single_envirement_var(key, key[dict_])
+        update_single_envirement_var(key, dict_[key])
     return None
 
 def get_env_variable(var):
